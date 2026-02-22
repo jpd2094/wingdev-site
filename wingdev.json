@@ -1,0 +1,68 @@
+{
+  "name": "wingdev site",
+  "description": "A static marketing/landing site for the Wingdev project, featuring a Three.js-powered liquid ether WebGL animation as a visual effect.",
+  "status": "active",
+  "repo_url": "",
+  "tech_stack": [
+    {
+      "name": "HTML",
+      "category": "language"
+    },
+    {
+      "name": "JavaScript",
+      "category": "language"
+    },
+    {
+      "name": "Three.js",
+      "category": "other"
+    },
+    {
+      "name": "esbuild",
+      "category": "other"
+    },
+    {
+      "name": "Node.js",
+      "category": "runtime"
+    }
+  ],
+  "deploy_urls": [],
+  "services": [
+    {
+      "id": "svc_githubpages",
+      "name": "GitHub Pages",
+      "category": "hosting",
+      "status": "active",
+      "url": "https://pages.github.com",
+      "pricing": "free",
+      "credentials": [],
+      "notes": "Inferred from the presence of a CNAME file in the project root, which is the standard mechanism for configuring a custom domain on GitHub Pages."
+    }
+  ],
+  "custom_fields": [],
+  "maintenance": [
+    {
+      "id": "maint_threejs_updates",
+      "title": "Keep Three.js dependency up to date",
+      "notes": "Three.js releases frequently with breaking changes. Review changelog before upgrading."
+    },
+    {
+      "id": "maint_rebuild_bundle",
+      "title": "Rebuild liquid-ether.js bundle after source changes",
+      "notes": "After editing src/liquid-ether.js, re-run esbuild to update the root liquid-ether.js file that is loaded by index.html."
+    }
+  ],
+  "future_features": [],
+  "notes": "Static site with no backend or third-party service integrations detected. Uses a CNAME file suggesting custom domain hosting (likely GitHub Pages). The liquid-ether.js file is a bundled Three.js WebGL animation used as a visual effect on the site.",
+  "quick_start": [
+    {
+      "label": "Install dependencies",
+      "command": "npm install",
+      "notes": "Required after clone"
+    },
+    {
+      "label": "Build bundle",
+      "command": "npx esbuild src/liquid-ether.js --bundle --outfile=liquid-ether.js",
+      "notes": "Compiles the Three.js animation into the root liquid-ether.js"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "wingdev site",
   "description": "A static marketing/landing site for the Wingdev project, featuring a Three.js-powered liquid ether WebGL animation as a visual effect.",
   "status": "active",
-  "repo_url": "",
+  "repo_url": "https://github.com/jpd2094/wingdev-site",
   "tech_stack": [
     {
       "name": "HTML",
@@ -25,7 +25,12 @@
       "category": "runtime"
     }
   ],
-  "deploy_urls": [],
+  "deploy_urls": [
+    {
+      "label": "Production",
+      "url": "https://wingdev.ai"
+    }
+  ],
   "services": [
     {
       "id": "svc_githubpages",
@@ -35,7 +40,17 @@
       "url": "https://pages.github.com",
       "pricing": "free",
       "credentials": [],
-      "notes": "Inferred from the presence of a CNAME file in the project root, which is the standard mechanism for configuring a custom domain on GitHub Pages."
+      "notes": "Hosting wingdev.ai via GitHub Pages with custom domain. DNS configured at GoDaddy with A records pointing to GitHub's IPs (185.199.108-111.153) and www CNAME to jpd2094.github.io. HTTPS enforced via GitHub's auto-provisioned Let's Encrypt certificate."
+    },
+    {
+      "id": "svc_godaddy",
+      "name": "GoDaddy DNS",
+      "category": "dns",
+      "status": "active",
+      "url": "https://dcc.godaddy.com/manage-dns",
+      "pricing": "paid",
+      "credentials": [],
+      "notes": "Domain registrar for wingdev.ai. DNS records point to GitHub Pages for hosting."
     }
   ],
   "custom_fields": [],
@@ -52,7 +67,7 @@
     }
   ],
   "future_features": [],
-  "notes": "Static site with no backend or third-party service integrations detected. Uses a CNAME file suggesting custom domain hosting (likely GitHub Pages). The liquid-ether.js file is a bundled Three.js WebGL animation used as a visual effect on the site.",
+  "notes": "Static landing page hosted on GitHub Pages at wingdev.ai. Domain registered at GoDaddy. The liquid-ether.js file is a bundled Three.js WebGL animation used as a visual effect on the site.",
   "quick_start": [
     {
       "label": "Install dependencies",

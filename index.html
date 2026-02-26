@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WingDev — your vibecoding sidekick</title>
-  <meta name="description" content="Track every service, API, and credential across all your projects. Auto-syncs with Claude Code as you build.">
+  <meta name="description" content="Mission control for everything you're building with Claude Code. Track projects, manage tasks, take notes, and keep every service organized — all in one dashboard.">
   <meta property="og:title" content="Wingdev">
   <meta property="og:description" content="Mission control for your coding projects">
   <meta property="og:image" content="https://wingdev.ai/assets/og-image.png">
@@ -349,7 +349,7 @@
       margin: 0 auto;
       padding: 6rem 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
 
@@ -370,6 +370,12 @@
       height: 40px;
       margin-bottom: 1rem;
       color: #6366f1;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
 
     .feature-card p {
@@ -412,6 +418,9 @@
       .download-wrapper {
         width: 100%;
       }
+      .features {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -425,6 +434,7 @@
     <img src="assets/logo.png" alt="WingDev" class="hero-logo">
     <h1>WingDev</h1>
     <p class="hero-subtitle">for <img src="assets/claude-code.png" alt="Claude Code" class="claude-logo">Claude Code</p>
+    <p class="tagline">Mission control for everything you're building. Track projects, manage tasks, take notes, and keep every service organized, all in one place.</p>
     <div class="btn-group">
       <div class="download-wrapper" id="download-wrapper">
         <div class="download-main">
@@ -462,7 +472,7 @@
           iOS Companion App
         </span>
         <span class="btn-version">Version 0.1.0</span>
-        <span class="btn-requires">Requires desktop app</span>
+        <span class="btn-requires"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;vertical-align:-1px;margin-right:3px;stroke:rgba(255,255,255,0.35)"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Requires desktop app</span>
       </a>
     </div>
     <div class="theme-picker">
@@ -484,20 +494,31 @@
         <line x1="8" y1="21" x2="16" y2="21"></line>
         <line x1="12" y1="17" x2="12" y2="21"></line>
       </svg>
-      <p>Track every service, API, and credential across all your projects</p>
+      <h3>All Your Projects, One View</h3>
+      <p>See every project you're working on at a glance. Quick-start commands, deploy status, git activity, and a built-in terminal — jump into any project in seconds.</p>
+    </div>
+    <div class="feature-card">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 11l3 3L22 4"></path>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+      </svg>
+      <h3>Project Management, for Vibecoders</h3>
+      <p>Project management tools that keep up with the pace of developing with Claude Code; track to-dos, issues, roadmap items, and keep notes for every project.</p>
+    </div>
+    <div class="feature-card">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+      </svg>
+      <h3>Services and Infrastructure</h3>
+      <p>Every API, database, and third-party service across all your projects — organized in one place. Full visibility across all your projects.</p>
     </div>
     <div class="feature-card">
       <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="16 18 22 12 16 6"></polyline>
         <polyline points="8 6 2 12 8 18"></polyline>
       </svg>
-      <p>Auto-syncs with Claude Code as you build</p>
-    </div>
-    <div class="feature-card">
-      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-      </svg>
-      <p>See deploy health, git activity, and dependency status at a glance</p>
+      <h3>Built for Claude Code</h3>
+      <p>Wingdev stays in sync as Claude Code works. New service added? Task completed? Your dashboard updates automatically — no manual tracking.</p>
     </div>
   </section>
 

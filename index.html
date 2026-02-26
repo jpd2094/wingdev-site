@@ -96,12 +96,23 @@
       50% { opacity: 1; filter: drop-shadow(0 0 6px #d97757); }
     }
 
-    .hero .tagline {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
+    .hero-tagline {
+      font-size: 0.85rem;
       color: #a1a1aa;
       font-weight: 400;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
       max-width: 480px;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .hero-tagline-divider {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 0.6rem auto;
     }
 
     .btn-group {
@@ -434,7 +445,7 @@
     <img src="assets/logo.png" alt="WingDev" class="hero-logo">
     <h1>WingDev</h1>
     <p class="hero-subtitle">for <img src="assets/claude-code.png" alt="Claude Code" class="claude-logo">Claude Code</p>
-    <p class="tagline">Mission control for everything you're building. Track projects, manage tasks, take notes, and keep every service organized, all in one place.</p>
+    <p class="hero-tagline">Mission control for everything you're building.<br><span class="hero-tagline-divider"></span>Track projects, manage tasks, take notes, and keep every service organized, all in one place.</p>
     <div class="btn-group">
       <div class="download-wrapper" id="download-wrapper">
         <div class="download-main">

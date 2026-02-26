@@ -166,6 +166,110 @@
       fill: currentColor;
     }
 
+    /* Download dropdown */
+    .download-wrapper {
+      position: relative;
+      width: 280px;
+    }
+
+    .download-main {
+      width: 100%;
+      display: flex;
+    }
+
+    .download-main .btn {
+      flex: 1;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .download-chevron {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      min-height: 5.5rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      flex-shrink: 0;
+    }
+
+    .download-chevron:hover {
+      background: var(--accent-hover);
+    }
+
+    .download-chevron svg {
+      width: 16px;
+      height: 16px;
+      stroke: #fff;
+      fill: none;
+      transition: transform 0.2s;
+    }
+
+    .download-wrapper.open .download-chevron svg {
+      transform: rotate(180deg);
+    }
+
+    .download-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #18181b;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: none;
+      z-index: 10;
+    }
+
+    .download-wrapper.open .download-dropdown {
+      display: block;
+    }
+
+    .download-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: #fafafa;
+      font-family: 'Quantico', sans-serif;
+      font-size: 0.85rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-align: left;
+    }
+
+    .download-option:last-child {
+      border-bottom: none;
+    }
+
+    .download-option:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .download-option .opt-label {
+      font-weight: 700;
+    }
+
+    .download-option .opt-rec {
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: var(--accent-hover);
+      margin-left: 0.25rem;
+    }
+
+    .download-option .opt-sub {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #71717a;
+    }
+
     .companion-section {
       display: flex;
       flex-direction: column;
@@ -305,6 +409,9 @@
         justify-content: center;
         width: 100%;
       }
+      .download-wrapper {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -319,13 +426,34 @@
     <h1>WingDev</h1>
     <p class="hero-subtitle">for <img src="assets/claude-code.png" alt="Claude Code" class="claude-logo">Claude Code</p>
     <div class="btn-group">
-      <a href="#" class="btn">
-        <span class="btn-row">
-          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          Download for Mac
-        </span>
-        <span class="btn-version">Version 0.1.0</span>
-      </a>
+      <div class="download-wrapper" id="download-wrapper">
+        <div class="download-main">
+          <a href="https://github.com/jpd2094/wingdev/releases/download/v0.1.0/Wingdev-0.1.0-arm64.dmg" class="btn" id="download-btn">
+            <span class="btn-row">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              Download for Mac
+            </span>
+            <span class="btn-version">Version 0.1.0</span>
+          </a>
+          <button class="download-chevron" id="download-toggle" aria-label="Choose architecture">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+        <div class="download-dropdown">
+          <a href="https://github.com/jpd2094/wingdev/releases/download/v0.1.0/Wingdev-0.1.0-arm64.dmg" class="download-option" id="dl-arm64">
+            <div>
+              <span class="opt-label">Apple Silicon</span><span class="opt-rec">(Recommended)</span>
+              <div class="opt-sub">M1, M2, M3, M4 — most Macs after 2020</div>
+            </div>
+          </a>
+          <a href="https://github.com/jpd2094/wingdev/releases/download/v0.1.0/Wingdev-0.1.0-x64.dmg" class="download-option" id="dl-x64">
+            <div>
+              <span class="opt-label">Intel</span>
+              <div class="opt-sub">Older Macs before 2020</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="companion-section">
       <a href="#" class="btn btn-secondary">
@@ -397,6 +525,16 @@
         autoRampDuration: 0.6
       });
       if (!ether) return;
+      var dlWrapper = document.getElementById('download-wrapper');
+      var dlToggle = document.getElementById('download-toggle');
+      dlToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        dlWrapper.classList.toggle('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!dlWrapper.contains(e.target)) dlWrapper.classList.remove('open');
+      });
+
       var dots = document.querySelectorAll('.theme-dot');
       dots.forEach(function (dot) {
         dot.addEventListener('click', function () {

@@ -1,8 +1,20 @@
 {
-  "name": "wingdev site",
-  "description": "A static marketing/landing site for the Wingdev project, featuring a Three.js-powered liquid ether WebGL animation as a visual effect.",
+  "name": "wingdev web",
+  "notes": "Static site with no backend or third-party service integrations detected. Uses a CNAME file suggesting custom domain hosting (likely GitHub Pages). The liquid-ether.js file is a bundled Three.js WebGL animation used as a visual effect on the site.",
   "status": "active",
   "repo_url": "",
+  "services": [
+    {
+      "id": "svc_githubpages",
+      "url": "https://pages.github.com",
+      "name": "GitHub Pages",
+      "notes": "Inferred from the presence of a CNAME file in the project root, which is the standard mechanism for configuring a custom domain on GitHub Pages.",
+      "status": "active",
+      "pricing": "free",
+      "category": "hosting",
+      "credentials": []
+    }
+  ],
   "tech_stack": [
     {
       "name": "HTML",
@@ -26,43 +38,39 @@
     }
   ],
   "deploy_urls": [],
-  "services": [
-    {
-      "id": "svc_githubpages",
-      "name": "GitHub Pages",
-      "category": "hosting",
-      "status": "active",
-      "url": "https://pages.github.com",
-      "pricing": "free",
-      "credentials": [],
-      "notes": "Inferred from the presence of a CNAME file in the project root, which is the standard mechanism for configuring a custom domain on GitHub Pages."
-    }
-  ],
-  "custom_fields": [],
+  "description": "A static marketing/landing site for the Wingdev project, featuring a Three.js-powered liquid ether WebGL animation as a visual effect.",
   "maintenance": [
     {
       "id": "maint_threejs_updates",
-      "title": "Keep Three.js dependency up to date",
-      "notes": "Three.js releases frequently with breaking changes. Review changelog before upgrading."
+      "notes": "Three.js releases frequently with breaking changes. Review changelog before upgrading.",
+      "title": "Keep Three.js dependency up to date"
     },
     {
       "id": "maint_rebuild_bundle",
-      "title": "Rebuild liquid-ether.js bundle after source changes",
-      "notes": "After editing src/liquid-ether.js, re-run esbuild to update the root liquid-ether.js file that is loaded by index.html."
+      "notes": "After editing src/liquid-ether.js, re-run esbuild to update the root liquid-ether.js file that is loaded by index.html.",
+      "title": "Rebuild liquid-ether.js bundle after source changes"
     }
   ],
-  "future_features": [],
-  "notes": "Static site with no backend or third-party service integrations detected. Uses a CNAME file suggesting custom domain hosting (likely GitHub Pages). The liquid-ether.js file is a bundled Three.js WebGL animation used as a visual effect on the site.",
   "quick_start": [
     {
       "label": "Install dependencies",
-      "command": "npm install",
-      "notes": "Required after clone"
+      "notes": "Required after clone",
+      "command": "npm install"
     },
     {
       "label": "Build bundle",
-      "command": "npx esbuild src/liquid-ether.js --bundle --outfile=liquid-ether.js",
-      "notes": "Compiles the Three.js animation into the root liquid-ether.js"
+      "notes": "Compiles the Three.js animation into the root liquid-ether.js",
+      "command": "npx esbuild src/liquid-ether.js --bundle --outfile=liquid-ether.js"
+    }
+  ],
+  "custom_fields": [],
+  "future_features": [
+    {
+      "id": "FA93358C-8051-4E89-9541-CCAF832CB604",
+      "title": "Add buttons for downloads",
+      "description": "Investigate sideloading or whatever it’s called when you install off App Store ",
+      "label": "roadmap",
+      "completed": false
     }
   ]
 }

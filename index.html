@@ -79,6 +79,21 @@
       font-weight: 400;
       margin-bottom: 1.5rem;
       letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .claude-logo {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      animation: claude-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes claude-pulse {
+      0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 0px transparent); }
+      50% { opacity: 1; filter: drop-shadow(0 0 6px #d97757); }
     }
 
     .hero .tagline {
@@ -302,7 +317,7 @@
   <section class="hero">
     <img src="assets/logo.png" alt="WingDev" class="hero-logo">
     <h1>WingDev</h1>
-    <p class="hero-subtitle">built for Claude Code</p>
+    <p class="hero-subtitle">for <img src="assets/claude-code.png" alt="Claude Code" class="claude-logo">Claude Code</p>
     <div class="btn-group">
       <a href="#" class="btn">
         <span class="btn-row">
@@ -370,7 +385,8 @@
       if (!window.LiquidEther) return;
       var ether = window.LiquidEther.init(container, {
         colors: ['#2C2EDB'],
-        resolution: 0.3,
+        resolution: 0.15,
+        iterationsPoisson: 12,
         BFECC: false,
         autoDemo: true,
         mouseForce: 8,

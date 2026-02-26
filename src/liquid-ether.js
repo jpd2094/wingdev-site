@@ -41,7 +41,7 @@ import * as THREE from "three";
     }
     init(container) {
       this.container = container;
-      this.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      this.pixelRatio = 1;
       this.resize();
       this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       this.renderer.autoClear = false;
@@ -467,6 +467,8 @@ import * as THREE from "three";
       let running = false;
       let rafId = null;
       const lastUserInteraction = { value: performance.now() };
+      const targetInterval = 1000 / 30;
+      let lastFrameTime = 0;
 
       Mouse.onInteract = function () {
         lastUserInteraction.value = performance.now();
@@ -477,13 +479,15 @@ import * as THREE from "three";
         enabled: autoDemoEnabled, speed: autoSpeed, resumeDelay: autoResumeDelay, rampDuration: autoRampDuration
       });
 
-      function loop() {
+      function loop(now) {
         if (!running) return;
+        rafId = requestAnimationFrame(loop);
+        if (now - lastFrameTime < targetInterval) return;
+        lastFrameTime = now;
         autoDriver.update();
         Mouse.update();
         Common.update();
         output.update();
-        rafId = requestAnimationFrame(loop);
       }
 
       function start() { if (!running) { running = true; loop(); } }

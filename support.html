@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WingDev — Support</title>
+  <meta name="description" content="Get help with WingDev for Mac and the WingDev iOS Companion App.">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Quantico', sans-serif;
+      background: #09090b;
+      color: #fafafa;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: #6366f1; text-decoration: none; }
+    a:hover { color: #818cf8; }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      flex: 1;
+    }
+    .back {
+      font-size: 0.8rem;
+      color: #a1a1aa;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+    .back:hover { color: #fafafa; }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #a1a1aa;
+      font-size: 0.85rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.03em;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: #a1a1aa;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .card a {
+      font-size: 0.85rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #a1a1aa;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back">&larr; Back to wingdev.ai</a>
+    <h1>Support</h1>
+    <p class="subtitle">Get help with WingDev</p>
+
+    <div class="card">
+      <h2>WingDev for Mac</h2>
+      <p>The desktop dashboard for managing your projects, services, and tasks. Syncs automatically with Claude Code as you build.</p>
+    </div>
+
+    <div class="card">
+      <h2>WingDev iOS Companion</h2>
+      <p>Monitor your projects on the go. Requires the WingDev desktop app to sync data.</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>For questions, bug reports, or feedback, reach out at <a href="mailto:jp@wingdev.ai">jp@wingdev.ai</a></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Built by JP &middot; <a href="https://github.com/jpd2094" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+</body>
+</html>
